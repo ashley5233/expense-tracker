@@ -3,15 +3,15 @@
     <h3> 請輸入你的支出</h3>
     <div class="row-sm">
       <label class="form-label" for="name">名稱：</label>
-      <input type="text" name="name" required>
+      <input type="text" name="name" value="{{record.name}}" required>
     </div>
     <div class="row-sm">
       <label class="form-label" for="date">日期：</label>
-      <input type="date" name="date">
+      <input type="date" name="date" value="{{record.date}}">
     </div>
     <div class="row-sm">
       <label class="form-label" for="category">類別：</label>
-      <input list="categorys" name="category" id="category" required>
+      <input list="categorys" name="category" id="category" value="{{record.category}}" required>
       <datalist id="categorys">
         <option>家居物業</option>
         <option>交通出行</option>
@@ -22,7 +22,7 @@
     </div>
     <div class="row-sm">
       <label class="form-label" for="amount">金額：</label>
-      <input type="text" name="amount" required>
+      <input type="text" name="amount" value="{{record.amount}}" required>
     </div>
     <button type="submit"> 送出 </button>
   </form>

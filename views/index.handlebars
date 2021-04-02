@@ -17,10 +17,10 @@
   {{!-- list group --}}
   {{#each records}}
   <ul class="list-group list-group-horizontal">
-    <li class="list-group-item"><i class="{{this.icon}}"></i> {{this.name}} </li>
-    <li class="list-group-item">{{this.date}}</li>
-    <li class="list-group-item">{{this.category}}</li>
-    <li class="list-group-item">{{this.amount}}</li>
+    <li class="list-group-item"><i class="{{this.icon}}"></i> {{this.name}} {{this.amount}}</li>
+    {{!-- <li class="list-group-item">{{this.date}}</li> --}}
+    <li class="list-group-item"><a href="/{{this._id}}/edit"> 修改 </a></li>
+    <li class="list-group-item"><a href="/delete"> 刪除 </a></li>
   </ul>
   {{/each}}
   {{!-- new track --}}

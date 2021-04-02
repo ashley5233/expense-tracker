@@ -61,6 +61,19 @@ app.post('/new', (req, res) => {
     .catch(error => console.error(error))
 })
 
+//edit 
+app.get('/:id/edit', (req, res) => {
+  const id = req.params.id
+  console.log(id)
+  Record.findById(id)
+    .lean()
+    .then(record => {
+      res.render('edit', { record })
+    }
+    )
+})
+
+
 app.listen(port, () => {
   console.log(`Express is running on http://localhost:${port}`)
 })
