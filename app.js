@@ -25,7 +25,10 @@ app.get('/', (req, res) => {
   res.render('index')
 })
 
-
+//add new record
+app.get('/new', (req, res) => {
+  res.render('new')
+})
 
 app.listen(port, () => {
   console.log(`Express is running on http://localhost:${port}`)
