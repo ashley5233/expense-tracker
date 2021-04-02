@@ -24,11 +24,11 @@ app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: true }))
 
 app.get('/', (req, res) => {
-  console.log(Category)
   Record.find()
     .lean()
     .then(
-      records => res.render('index', { records })
+      records =>
+        res.render('index', { records })
     )
     .catch(error => console.error(error))
 })
@@ -40,14 +40,21 @@ app.get('/new', (req, res) => {
 })
 
 app.post('/new', (req, res) => {
-
   const { name, date, category, amount } = req.body
-  return Record.create({
-    name: name,
-    date: date,
-    category: category,
-    amount: amount
-  })
+  Category.find({ name: { $regex: `${category}`, $options: 'i' } })
+    .lean()
+    .then(
+      record => {
+        let categoryIcon = record[0].icon
+        return Record.create({
+          name: name,
+          date: date,
+          category: category,
+          amount: amount,
+          icon: categoryIcon
+        })
+      }
+    )
     .then(
       res.redirect('/')
     )
