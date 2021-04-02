@@ -1,0 +1,24 @@
+{
+  "record": [
+    {
+      "name": "午餐",
+      "category": "餐飲食品",
+      "amount": 50
+    },
+    {
+      "name": "晚餐",
+      "category": "餐飲食品",
+      "amount": 120
+    },
+    {
+      "name": "捷運",
+      "category": "交通出行",
+      "amount": 40
+    },
+    {
+      "name": "電影：復仇者聯盟",
+      "category": "休閒娛樂",
+      "amount": 280
+    }
+  ]
+}
