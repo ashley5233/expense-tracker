@@ -8,6 +8,8 @@ const port = 3000
 const mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost/expense-tracker', { useNewUrlParser: true, useUnifiedTopology: true })
 const db = mongoose.connection
+const Record = require('./models/record')
+const Category = require('./models/category')
 
 db.on('error', () => {
   console.log(error)
@@ -22,12 +24,34 @@ app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: true }))
 
 app.get('/', (req, res) => {
-  res.render('index')
+  console.log(Category)
+  Record.find()
+    .lean()
+    .then(
+      records => res.render('index', { records })
+    )
+    .catch(error => console.error(error))
 })
 
 //add new record
 app.get('/new', (req, res) => {
+
   res.render('new')
+})
+
+app.post('/new', (req, res) => {
+
+  const { name, date, category, amount } = req.body
+  return Record.create({
+    name: name,
+    date: date,
+    category: category,
+    amount: amount
+  })
+    .then(
+      res.redirect('/')
+    )
+    .catch(error => console.error(error))
 })
 
 app.listen(port, () => {

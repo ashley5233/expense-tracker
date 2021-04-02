@@ -15,11 +15,14 @@
   <h2>總金額：</h2>
 
   {{!-- list group --}}
+  {{#each records}}
   <ul class="list-group list-group-horizontal">
-    <li class="list-group-item">An item</li>
-    <li class="list-group-item">Edit</li>
-    <li class="list-group-item">Delete</li>
+    <li class="list-group-item"><i class="{{this.icon}}"></i> {{this.name}} </li>
+    <li class="list-group-item">{{this.date}}</li>
+    <li class="list-group-item">{{this.category}}</li>
+    <li class="list-group-item">{{this.amount}}</li>
   </ul>
+  {{/each}}
   {{!-- new track --}}
   <a href="/new">新增支出</a>
 
