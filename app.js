@@ -26,18 +26,30 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(methodOverride('_method'))
 
 app.get('/', (req, res) => {
-  Record.find()
-    .lean()
-    .then(
-      records =>
-        res.render('index', { records })
-    )
-    .catch(error => console.error(error))
+  //計算總和
+  const amount = Record.aggregate([{
+    $group: {
+      _id: null,
+      total: {
+        $sum: "$amount"
+      }
+    }
+  }])
+  Promise.all(([amount]))
+    .then(([amount]) => {
+      const totalAmount = amount[0].total
+      Record.find()
+        .lean()
+        .then(
+          records =>
+            res.render('index', { records, totalAmount })
+        )
+    })
+    .catch(error => console.log(error))
 })
 
 //add new record
 app.get('/new', (req, res) => {
-
   res.render('new')
 })
 
@@ -55,12 +67,10 @@ app.post('/new', (req, res) => {
           amount: amount,
           categoryIcon: categoryIcon
         })
+          .then(res.redirect('/'))
+          .catch(error => console.error(error))
       }
     )
-    .then(
-      res.redirect('/')
-    )
-    .catch(error => console.error(error))
 })
 
 //edit 

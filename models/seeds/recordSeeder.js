@@ -16,7 +16,7 @@ db.once('open', () => {
       if (recordList[i].category === categoryList[k].category) {
         Record.create({
           name: recordList[i].name,
-          date: date,
+          date: recordList[i].date,
           category: recordList[i].category,
           amount: recordList[i].amount,
           categoryIcon: categoryList[k].categoryIcon
