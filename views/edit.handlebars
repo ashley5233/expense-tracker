@@ -1,5 +1,5 @@
 <div class="container">
-  <form action="/new" method="POST">
+  <form action="/{{record._id}}/edit" method="POST">
     <h3> 請輸入你的支出</h3>
     <div class="row-sm">
       <label class="form-label" for="name">名稱：</label>
@@ -11,7 +11,7 @@
     </div>
     <div class="row-sm">
       <label class="form-label" for="category">類別：</label>
-      <input list="categorys" name="category" id="category" value="{{record.category}}" required>
+      <input list="categorys" name="category" value="{{record.category}}" id="category" required>
       <datalist id="categorys">
         <option>家居物業</option>
         <option>交通出行</option>

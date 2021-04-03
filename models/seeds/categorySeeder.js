@@ -13,8 +13,8 @@ db.on('error', () => {
 db.once('open', () => {
   for (let i = 0; i < categoryList.length; i++) {
     Category.create({
-      name: categoryList[i].name,
-      icon: categoryList[i].icon
+      category: categoryList[i].category,
+      categoryIcon: categoryList[i].categoryIcon
     })
   }
   console.log('Category done!')

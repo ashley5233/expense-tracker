@@ -13,13 +13,13 @@ db.once('open', () => {
   let date = new Date()
   for (let i = 0; i < recordList.length; i++) {
     for (k = 0; k < categoryList.length; k++) {
-      if (recordList[i].category === categoryList[k].name) {
+      if (recordList[i].category === categoryList[k].category) {
         Record.create({
           name: recordList[i].name,
           date: date,
           category: recordList[i].category,
           amount: recordList[i].amount,
-          icon: categoryList[k].icon
+          categoryIcon: categoryList[k].categoryIcon
         })
       }
     }
