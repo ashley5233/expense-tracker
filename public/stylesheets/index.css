@@ -1,0 +1,6 @@
+/* record list */
+.record-list {
+  display: flex;
+  flex-flow: nowrap column;
+  padding: 10px;
+}

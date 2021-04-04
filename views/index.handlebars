@@ -1,36 +1,43 @@
 <div class="container">
   {{!-- dropdown --}}
-
   <form action="/fliter" method="POST">
     <div class="dropdown">
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
         aria-expanded="false">
         類別
       </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-        <li><a class="dropdown-item" name="home" href="/">家居物業</a></li>
-        <li><a class="dropdown-item" name="home" href="/">交通出行</a></li>
-        <li><a class="dropdown-item" name="home" href="/">休閒娛樂</a></li>
-        <li><a class="dropdown-item" name="home" href="#">餐飲食品</a></li>
-        <li><a class="dropdown-item" name="home" href="#">其他</a></li>
-      </ul>
+      <div class="dropdown-menu">
+        <button type="submit" class="dropdown-item" name="filter" value="家居物業">家居物業</button>
+        <button type="submit" class="dropdown-item" name="filter" value="交通出行">交通出行</button>
+        <button type="submit" class="dropdown-item" name="filter" value="休閒娛樂">休閒娛樂</button>
+        <button type="submit" class="dropdown-item" name="filter" value="餐飲食品">餐飲食品</button>
+        <button type="submit" class="dropdown-item" name="filter" value="其他">其他</button>
+      </div>
     </div>
 
   </form>
 
   {{!-- total money --}}
   <h2>總金額： {{totalAmount}}</h2>
-
+  <div class="record-list">
+    {{#each records}}
+    <div class="container">
+      <div class="row">
+        <div class="col"><i class="{{this.categoryIcon}}"></i> {{this.name}} ${{this.amount}} </div>
+        <div class="col">{{this.date}}</div>
+        <div class="col"><a href="/records/{{this._id}}/edit"> 修改 </a></div>
+        <div class="col">
+          <form action="/records/{{this._id}}?_method=DELETE" method="POST">
+            <button type="submit">刪除</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
   {{!-- list group --}}
-  {{#each records}}
-  <ul class="list-group list-group-horizontal">
-    <li class="list-group-item"><i class="{{this.categoryIcon}}"></i> {{this.name}} {{this.amount}}</li>
-    <li class="list-group-item">{{this.date}}</li>
-    <li class="list-group-item"><a href="/{{this._id}}/edit"> 修改 </a></li>
-    <li class="list-group-item"><a href="/{{this._id}}/delete"> 刪除 </a></li>
-  </ul>
-  {{/each}}
+
   {{!-- new track --}}
-  <a href="/new">新增支出</a>
+  <a href="/records/new">新增支出</a>
 
 </div>
