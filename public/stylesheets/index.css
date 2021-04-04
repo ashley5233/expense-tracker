@@ -4,3 +4,13 @@
   flex-flow: nowrap column;
   padding: 10px;
 }
+.totalAmount-title{
+  text-align: center;
+}
+.container-list {
+  border: 1px solid black;
+  border-radius: 15px;
+  width: 70%;
+  margin: auto;
+  padding: 10px;
+}
