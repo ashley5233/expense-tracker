@@ -1,9 +1,10 @@
-const mongoose = require('mongoose')
+
 const Record = require('../record')
 const recordList = require('./recordList.json').record
 const categoryList = require('./categoryList.json').category
-mongoose.connect('mongodb://localhost/expense-tracker', { useNewUrlParser: true, useUnifiedTopology: true })
-const db = mongoose.connection
+
+const db = require('../../config/mongoose')
+
 
 db.on('error', () => {
   console.log(error)

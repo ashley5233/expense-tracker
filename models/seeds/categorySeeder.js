@@ -1,10 +1,8 @@
-const mongoose = require('mongoose')
+const db = require('../../config/mongoose')
+
 //載入category model
 const Category = require('../category')
 const categoryList = require('./categoryList.json').category
-
-mongoose.connect('mongodb://localhost/expense-tracker', { useNewUrlParser: true, useUnifiedTopology: true })
-const db = mongoose.connection
 
 db.on('error', () => {
   console.log(error)
