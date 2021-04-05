@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
     {
       $group: {
         _id: null,
-        amount: { $sum: "$amount" }
+        total: { $sum: "$amount" }
       }
     }
   ])
@@ -27,7 +27,7 @@ router.get('/', (req, res) => {
 
   Promise.all(([amount, records]))
     .then(([amount, records]) => {
-      const totalAmount = amount[0].amount
+      const totalAmount = amount[0]
       res.render('index', { records, totalAmount })
     })
     .catch(error => console.log(error))
