@@ -1,16 +1,56 @@
+*{
+  font-family: 'Fira Sans Extra Condensed', sans-serif;
+  font-family: 'Patrick Hand', 微軟正黑體;
+}
+body{
+  background-color: #FFF3C5;
+}
+
 /* record list */
 .record-list {
   display: flex;
   flex-flow: nowrap column;
-  padding: 10px;
+  padding: 0px;
+  border-radius: 15px;
+  background-color: aliceblue;
+  width: 70%;
+  margin: auto;
 }
 .totalAmount-title{
   text-align: center;
+  padding: 10px;
+  border-top-left-radius: 4px 2px;
+  border-top-right-radius: 3px 4px;
+  color: #FEDF6C;
+  background-color:#FE7E6C;
 }
 .container-list {
-  border: 1px solid black;
-  border-radius: 15px;
+  padding: 10px;
+  width: 100%;
+}
+
+/* icon */
+.fas {
+  color: #FF9D9D;
+  font-size: 28px;
+  text-align: center;
+}
+
+.btn-list {
   width: 70%;
   margin: auto;
-  padding: 10px;
+  padding: 20px;
+
+}
+.dropdown{
+  right: -20%;
+}
+
+.amount-list{
+  font-size: 20px;
+  color: #898989;
+}
+
+.name-list{
+  color: #898989;
 }
