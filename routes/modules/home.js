@@ -25,7 +25,7 @@ router.get('/', (req, res) => {
   ])
 
 
-  Promise.all(([amount, records]))
+  Promise.all([amount, records])
     .then(([amount, records]) => {
       const totalAmount = amount[0]
       res.render('index', { records, totalAmount })
