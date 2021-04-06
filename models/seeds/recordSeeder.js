@@ -11,7 +11,7 @@ db.on('error', () => {
 })
 
 db.once('open', () => {
-  let date = new Date()
+  let date = ISODate()
   for (let i = 0; i < recordList.length; i++) {
     for (k = 0; k < categoryList.length; k++) {
       if (recordList[i].category === categoryList[k].category) {
