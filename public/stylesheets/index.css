@@ -3,7 +3,7 @@
   font-family: 'Patrick Hand', 微軟正黑體;
 }
 body{
-  background-color: #FFF3C5;
+  background-image: url(https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80);
 }
 
 /* record list */
@@ -12,17 +12,17 @@ body{
   flex-flow: nowrap column;
   padding: 0px;
   border-radius: 15px;
-  background-color: aliceblue;
+  background-color: rgba(93, 93, 93, 0.8);
   width: 70%;
   margin: auto;
 }
 .totalAmount-title{
   text-align: center;
   padding: 10px;
-  border-top-left-radius: 4px 2px;
-  border-top-right-radius: 3px 4px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   color: #FEDF6C;
-  background-color:#FE7E6C;
+  background-color:rgba(255, 232, 224  ,0.4)
 }
 .container-list {
   padding: 10px;
@@ -48,9 +48,20 @@ body{
 
 .amount-list{
   font-size: 20px;
-  color: #898989;
+  color: #FEFFEB;
 }
 
 .name-list{
-  color: #898989;
+  color: #FEFFEB;
+}
+
+/* Edit record */
+.record {
+  background-color: rgba(93, 93, 93, 0.8);
+  width: 50%;
+  color: #FEFFEB ;
+  text-align: center;
+  border-radius: 10px;
+  margin: auto;
+  padding: 20px;
 }

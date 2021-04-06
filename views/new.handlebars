@@ -1,29 +1,32 @@
 <div class="container mt-5">
-  <form action="/records/new" method="POST">
-    <h3> 請輸入你的支出</h3>
-    <div class="row-sm">
-      <label class="form-label" for="name">名稱：</label>
-      <input type="text" name="name" required>
-    </div>
-    <div class="row-sm">
-      <label class="form-label" for="date">日期：</label>
-      <input type="date" id="date" name="date" required>
-    </div>
-    <div class="row-sm">
-      <label class="form-label" for="category">類別：</label>
-      <input list="categorys" name="category" id="category" required>
-      <datalist id="categorys">
-        <option>家居物業</option>
-        <option>交通出行</option>
-        <option>休閒娛樂</option>
-        <option>餐飲食品</option>
-        <option>其他</option>
-      </datalist>
-    </div>
-    <div class="row-sm">
-      <label class="form-label" for="amount">金額：</label>
-      <input type="text" name="amount" required>
-    </div>
-    <button type="submit"> 送出 </button>
-  </form>
+  <div class="record">
+    <form action="/records/new" method="POST">
+      <h3> 請輸入你的支出</h3>
+      <div class="row-sm">
+        <label class="form-label" for="name">名稱：</label>
+        <input type="text" name="name" required>
+      </div>
+      <div class="row-sm">
+        <label class="form-label" for="date">日期：</label>
+        <input type="date" id="date" name="date" required>
+      </div>
+      <div class="row-sm">
+        <label class="form-label" for="category">類別：</label>
+        <input list="categorys" name="category" id="category" required>
+        <datalist id="categorys">
+          <option>家居物業</option>
+          <option>交通出行</option>
+          <option>休閒娛樂</option>
+          <option>餐飲食品</option>
+          <option>其他</option>
+        </datalist>
+      </div>
+      <div class="row-sm">
+        <label class="form-label" for="amount">金額：</label>
+        <input type="text" name="amount" required>
+      </div>
+      <button type="submit"> 送出 </button>
+    </form>
+  </div>
+
 </div>

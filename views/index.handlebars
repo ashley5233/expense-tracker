@@ -3,7 +3,7 @@
     <div class="col-sm new-btn">
       {{!-- new track --}}
       <form action="/records/new" method="GET">
-        <button class="btn btn-secondary" type="submit">新增</button>
+        <button class="btn btn-secondary" type="submit">Create</button>
       </form>
     </div>
     <div class="col-sm dropdown">
@@ -29,7 +29,7 @@
   <div class="record-list">
     <div class="totalAmount-title">
       {{!-- total money --}}
-      <h2>總消費金額： {{totalAmount.total}} 元</h2>
+      <h2>Total Amount: {{totalAmount.total}} </h2>
     </div>
     {{#each records}}
     <div class="container-list">
@@ -46,12 +46,12 @@
         <div class="col-3 amount-list">${{this.amount}}</div>
         <div class="col-2">
           <form action="/records/{{this._id}}/edit" method="get">
-            <button class="btn btn-outline-primary" type="submit">修改</button>
+            <button class="btn btn-outline-light" type="submit">Edit</button>
           </form>
         </div>
         <div class="col-2">
           <form action="/records/{{this._id}}?_method=DELETE" method="POST">
-            <button class="btn btn-outline-primary" type="submit" onclick="myFunction()">刪除</button>
+            <button class="btn btn-outline-light" type="submit" onclick="myFunction()">Delete</button>
           </form>
           <script>
             function myFunction() {
