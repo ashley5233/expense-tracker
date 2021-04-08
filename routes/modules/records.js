@@ -15,6 +15,7 @@ router.post('/new', (req, res) => {
     .then(
       record => {
         let categoryIcon = record[0].categoryIcon
+        console.log(date)
         return Record.create({
           name: name,
           date: date,
