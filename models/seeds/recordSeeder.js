@@ -11,9 +11,9 @@ db.on('error', () => {
 })
 
 db.once('open', () => {
-  let date = new Date()
   for (let i = 0; i < recordList.length; i++) {
     for (k = 0; k < categoryList.length; k++) {
+      let date = new Date()
       if (recordList[i].category === categoryList[k].category) {
         Record.create({
           name: recordList[i].name,

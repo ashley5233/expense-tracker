@@ -14,6 +14,10 @@ router.get('/', (req, res) => {
   ])
   const records = Record.aggregate([
     {
+      $match: {}
+
+    },
+    {
       $project: {
         name: 1,
         category: 1,
