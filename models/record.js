@@ -8,7 +8,8 @@ const recordSchema = new Schema({
   },
   date: {
     type: Date,
-    default: new Date()
+    required: true
+    // default: new Date()
   },
   category: {
     type: String,

@@ -19,7 +19,8 @@ db.once('open', () => {
           name: recordList[i].name,
           category: recordList[i].category,
           amount: recordList[i].amount,
-          categoryIcon: categoryList[k].categoryIcon
+          categoryIcon: categoryList[k].categoryIcon,
+          date: date
         })
       }
     }
